@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
 body {
     background-color: #e9f5ec;
-    font-family: "Arial", sans-serif;
+    font-family: "Mochiy Pop One", sans-serif;
     color: #333;
     text-align: center;
     padding: 2rem;
+    background: linear-gradient(to bottom right, #e9f5ec, #d8e8df);
 }
 
 .container {
@@ -17,6 +19,7 @@ body {
 
 h1,
 h2 {
+    font-family: "Mochiy Pop One", sans-serif;
     color: #5e897c;
 }
 
@@ -214,4 +217,93 @@ img {
     border: 3px solid #ffd3dc;
     border-radius: 15px;
     padding: 3px;
+}
+.note:hover,
+.memory-gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+
+
+.daily-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.daily-card {
+    width: 180px;
+    height: 240px;
+    perspective: 1000px;
+}
+
+.daily-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.9s ease;
+    transform-style: preserve-3d;
+}
+
+.daily-card:hover .daily-card-inner {
+    transform: rotateY(180deg);
+}
+
+.daily-card-front,
+.daily-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    backface-visibility: hidden;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.daily-card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.daily-card-back {
+    background-color: #f1f9f2;
+    color: #3c5f4c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    font-size: 0.95rem;
+    transform: rotateY(180deg);
+    animation: fadeIn 1s ease forwards;
+}
+
+/* 漸入效果 */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: rotateY(180deg) translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: rotateY(180deg) translateY(0);
+    }
+}
+.add-home-note {
+    margin-top: 3rem;
+    padding: 1.5rem;
+    background: #fffbe6;
+    border-left: 6px solid #f5d76e;
+    border-radius: 12px;
+    color: #4a4a2f;
+    font-size: 1rem;
+    line-height: 1.7;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
