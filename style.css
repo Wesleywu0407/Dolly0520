@@ -1,0 +1,217 @@
+body {
+    background-color: #e9f5ec;
+    font-family: "Arial", sans-serif;
+    color: #333;
+    text-align: center;
+    padding: 2rem;
+}
+
+.container {
+    max-width: 750px;
+    margin: auto;
+    background: #cbe3d3;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+h1,
+h2 {
+    color: #5e897c;
+}
+
+button {
+    background-color: #a6c8ae;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 1rem 0;
+}
+
+.photo {
+    width: 100%;
+    max-width: 300px;
+    margin-top: 1rem;
+    border-radius: 10px;
+}
+
+.message-box {
+    margin-top: 1.5rem;
+    background: #d9eee1;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.game-section {
+    margin-top: 2rem;
+}
+
+.wall-section {
+    margin-top: 3rem;
+}
+
+.note {
+    background: #d4e6db;
+    padding: 1rem;
+    margin: 1rem auto;
+    border-radius: 10px;
+    cursor: pointer;
+    max-width: 600px;
+    text-align: left;
+    transition: background 0.3s;
+}
+
+.note:hover {
+    background: #eaf6ef;
+}
+
+.note p {
+    display: none;
+    margin-top: 0.5rem;
+    color: #333;
+    line-height: 1.6;
+}
+
+.memory-section {
+    margin-top: 3rem;
+}
+
+.memory-section h2 {
+    color: #5e897c;
+    margin-bottom: 1rem;
+}
+
+.memory-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.memory-gallery img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 15px rgba(100, 100, 100, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+img {
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 10px;
+}
+
+/* 📱 手機版調整 */
+@media (max-width: 600px) {
+    body {
+        padding: 1rem;
+    }
+
+    .container {
+        padding: 1.5rem 1rem;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+        margin-top: 1.5rem;
+    }
+
+    button {
+        font-size: 1rem;
+        padding: 8px 16px;
+    }
+
+    .photo,
+    .memory-gallery img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .memory-gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .note {
+        margin: 1rem 0;
+        padding: 1rem;
+        font-size: 0.95rem;
+    }
+
+    figcaption {
+        font-size: 0.85rem;
+        padding-bottom: 0.5rem;
+    }
+}
+.heart {
+    position: absolute;
+    font-size: 24px;
+    color: #ff5e7e;
+    animation: floatHeart 1s ease-out forwards;
+    pointer-events: none;
+    z-index: 999;
+}
+
+@keyframes floatHeart {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-80px) scale(1.5);
+        opacity: 0;
+    }
+}
+
+
+.trip-note {
+    font-size: 1rem;
+    color: #3f5c4e;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 0.8rem 1rem;
+    margin: 1rem auto;
+    max-width: 600px;
+    border-radius: 10px;
+    line-height: 1.6;
+}
+.korea-title {
+    color: #d9737f;
+    font-family: 'Comic Sans MS', 'Arial', sans-serif;
+    font-size: 1.7rem;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.korea-note {
+    background-color: #ffeef2;
+    color: #9c3a4c;
+    border-left: 5px solid #ffb3c1;
+    box-shadow: 0 0 10px rgba(255, 180, 200, 0.2);
+}
+
+.korea-gallery {
+    border: 2px dashed #ffb3c1;
+    border-radius: 12px;
+    padding: 1rem;
+    background-color: #fff7f9;
+    margin-bottom: 2rem;
+}
+.korea-gallery img {
+    border: 3px solid #ffd3dc;
+    border-radius: 15px;
+    padding: 3px;
+}
