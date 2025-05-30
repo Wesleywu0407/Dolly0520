@@ -1,221 +1,105 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
     <head>
-        <meta name="theme-color" content="#dbeee3" />
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>阿芊芊專屬驚喜網站</title>
-        <link rel="stylesheet" href="style.css" />
-        <link rel="icon" href="assets/icon.png" type="image/png" />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Zhi+Mang+Xing&display=swap"
-            rel="stylesheet"
-        />
+        <title>比價工具</title>
+        <link rel="stylesheet" href="css/style.css" />
     </head>
     <body>
-        <audio controls autoplay loop>
-            <source src="assets/music.mp3" type="audio/mpeg" />
-        </audio>
+        <nav class="main-menu">
+            <ul>
+                <li><a href="birthday.html">🎂 生日</a></li>
+                <li><a href="cat.html">🐱 貓咪</a></li>
+                <li><a href="compare.html">🛒 比價網</a></li>
+            </ul>
+        </nav>
 
-        <div class="container">
-            <h1>✨For Dolly 蔡 and 我✨</h1>
-            <p>這裡是我偷偷幫你做的東西，給我們三週年的一點紀念！</p>
-            <img src="assets/back.jpg" class="photo" alt="我們的照片" />
+        <header>
+            <h1>來找最便宜的東東
+            </h1>
+            <input type="text" id="keyword" placeholder="輸入商品關鍵字..." />
+            <button onclick="openLinks()">立即比價</button>
 
-            <div class="message-box">
-                <p>轉眼就三年了，真的很快～</p>
-                <p>
-                    <strong>距離我們見面只剩下：</strong>
-                    <span id="countdown"></span>
-                </p>
+            <div class="checkbox-group">
+                <label
+                    ><input
+                        type="checkbox"
+                        class="platform"
+                        value="shopee"
+                        checked
+                    />
+                    蝦皮</label
+                >
+                <label
+                    ><input
+                        type="checkbox"
+                        class="platform"
+                        value="momo"
+                        checked
+                    />
+                    momo</label
+                >
+                <label
+                    ><input
+                        type="checkbox"
+                        class="platform"
+                        value="ruten"
+                        checked
+                    />
+                    露天</label
+                >
+                <label
+                    ><input
+                        type="checkbox"
+                        id="selectAll"
+                        onchange="toggleAll(this)"
+                    />
+                    全選</label
+                >
             </div>
+        </header>
 
-            <div class="game-section">
-                <h2>點擊證明你多漂亮！</h2>
-                <button onclick="showPraise()">點我一下（一直點）</button>
-                <p id="praise-message"></p>
-            </div>
+        <main>
+            <p>輸入商品後，自動在選定的平台打開搜尋結果。</p>
+        </main>
 
-            <h2>我們的澳洲回憶 🌏</h2>
-            <p style="margin-top: 1rem">📸 小提示：點照片會有驚喜唷！</p>
-            <div class="memory-gallery">
-                <img src="assets/1.JPG" alt="阿芊芊雪梨港邊" />
-                <img src="assets/2.jpg" />
-                <img src="assets/3.JPG" alt="芊芊望著海岸的背影" />
-                <img src="assets/4.JPG" />
-            </div>
-            <div class="memory-section">
-                <h2>👫 我們的 合照牆</h2>
-                <div class="memory-gallery">
-                    <img src="assets/tgt.JPG" alt="我們一起騎車的樣子" />
-                    <figure>
-                        <img src="assets/tgt2.JPG" alt="自拍" />
-                        <figcaption>這張妳笑到我想親妳！</figcaption>
-                    </figure>
-                    <img src="assets/tgt3.jpg" alt="吃東西的夜市回憶" />
-                    <img src="assets/tgt4.jpg" alt="妳那張超可愛的臉" />
-                </div>
-            </div>
+        <script>
+            function openLinks() {
+                const keyword = document.getElementById("keyword").value.trim();
+                if (!keyword) {
+                    alert("請輸入商品名稱！");
+                    return;
+                }
 
-            <h2>🇰🇷 我們的韓國回憶</h2>
-            <p class="trip-note">
-                我們在韓國短短幾天根本吃爆每一間店 !!!!!!!!
-                還記得我們忘記東西衝回去店裡然後趕去機場嗎？
-                超緊張但又超好笑～有你一起真的好幸福❤️
-            </p>
-            <div class="memory-gallery korea-gallery">
-                <img src="korea/1.jpg" />
-                <img src="korea/2.jpg" />
-                <img src="korea/3.jpg" />
-                <img src="korea/4.jpg" />
-                <img src="korea/5.jpg" />
-                <img src="korea/6.jpg" />
-                <img src="korea/7.jpg" />
-                <img src="korea/8.jpg" />
-                <img src="korea/9.jpg" />
-                <img src="korea/10.jpg" />
-            </div>
-            <h2>我們的日常生活 ❤️</h2>
-            <div class="daily-gallery">
-                <div class="daily-card">
-                    <div class="daily-card-inner">
-                        <div class="daily-card-front">
-                            <img src="daily/2.jpg" alt="Daily 2" />
-                        </div>
-                        <div class="daily-card-back">
-                            這個畫面，像極了我每天最捨不得離開的時候
-                        </div>
-                    </div>
-                </div>
-                <div class="daily-card">
-                    <div class="daily-card-inner">
-                        <div class="daily-card-front">
-                            <img src="daily/3.jpg" alt="Daily 3" />
-                        </div>
-                        <div class="daily-card-back">
-                            即使只是等車的瞬間，有你也變得好特別
-                        </div>
-                    </div>
-                </div>
-                <div class="daily-card">
-                    <div class="daily-card-inner">
-                        <div class="daily-card-front">
-                            <img src="daily/4.jpg" alt="Daily 4" />
-                        </div>
-                        <div class="daily-card-back">
-                            妳的笑容是我每天都想收藏的畫面 ☀️
-                        </div>
-                    </div>
-                </div>
-                <div class="daily-card">
-                    <div class="daily-card-inner">
-                        <div class="daily-card-front">
-                            <img src="daily/5.jpg" alt="Daily 5" />
-                        </div>
-                        <div class="daily-card-back">
-                            在妳背後的我，永遠想當那個守護妳的人
-                        </div>
-                    </div>
-                </div>
-                <div class="daily-card">
-                    <div class="daily-card-inner">
-                        <div class="daily-card-front">
-                            <img src="daily/6.jpg" alt="Daily 6" />
-                        </div>
-                        <div class="daily-card-back">
-                            認真的妳最有魅力，每一眼都讓我沦陷
-                        </div>
-                    </div>
-                </div>
-                <div class="daily-card">
-                    <div class="daily-card-inner">
-                        <div class="daily-card-front">
-                            <img src="daily/7.jpg" alt="Daily 7" />
-                        </div>
-                        <div class="daily-card-back">
-                            這些日常，全都是你給我的滿滿幸福 💕
-                        </div>
-                    </div>
-                </div>
-            </div>
+                const encoded = encodeURIComponent(keyword);
+                const selected = Array.from(
+                    document.querySelectorAll(".platform:checked")
+                ).map((cb) => cb.value);
 
-            <div class="wall-section">
-                <h2>我對你說過的話嘻嘻！！！</h2>
+                if (selected.length === 0) {
+                    alert("請至少選擇一個平台！");
+                    return;
+                }
 
-                <div class="note" onclick="toggleNote(this)">
-                    <h3>我真的超級幸福</h3>
-                    <p>
-                        阿芊 謝謝你跟我一起得每趟旅程真的好開心 你是我最好的旅伴
-                    </p>
-                </div>
+                const urls = {
+                    shopee: `https://shopee.tw/search?keyword=${encoded}`,
+                    momo: `https://m.momoshop.com.tw/mosearch/${encoded}.html`,
+                    ruten: `https://find.ruten.com.tw/s/?q=${encoded}`,
+                };
 
-                <div class="note" onclick="toggleNote(this)">
-                    <h3>給我紙條的阿芊，是我人生的魔法使</h3>
-                    <p>
-                        你留給我的每一張紙條，我都記得清清楚楚...我真的很愛你。
-                    </p>
-                </div>
+                selected.forEach((platform) => {
+                    window.open(urls[platform], "_blank");
+                });
+            }
 
-                <div class="note" onclick="toggleNote(this)">
-                    <h3>我學會了怎麼去愛，全是因為你</h3>
-                    <p>是你讓我學會了怎麼去愛，怎麼去體貼...我會好好珍惜你。</p>
-                </div>
-
-                <div class="note" onclick="toggleNote(this)">
-                    <h3>謝謝你讓我幸福肥</h3>
-                    <p>謝謝你帶給我幸福，甚至讓我幸福肥ㄨㄟˊ～</p>
-                </div>
-                <div class="note" onclick="toggleNote(this)">
-                    <h3>三週年啦！！</h3>
-                    <p>
-                        阿芊芊 不知道不覺 到我們的第三年了！ 這段時間謝謝有你
-                        謝謝你總是給我鼓勵 在我低潮的時候給我信心
-                        而且還給我滿滿的幸福。
-                        第三年對我們來說很特別，因為我們在短短的時候去了很多不同的地方，甚至跟你一起創造了更多的回憶：到了韓國、到了澳洲、去了台南。
-                    </p>
-                </div>
-
-                <div class="note" onclick="toggleNote(this)">
-                    <h3>我們真的好有默契</h3>
-                    <p>
-                        你一定是我最幸福的夥伴，也是讓我最快樂的人了！！！而且我們在來到澳洲之前，沒有想到我們兩個那麼的有默契，感覺我們的默契已經在台灣都培養好了！好好笑❤️
-                        謝謝你阿芊芊❤️❤️
-                        這些年因為有你我才可以那麼開心，讓我的生活不再感到是獨自一個人。
-                        我還想跟你一起到處去旅行，在我們的未來一起去達成我們的目標，首要條件是去日本！！
-                    </p>
-                </div>
-
-                <div class="note" onclick="toggleNote(this)">
-                    <h3>不能立刻慶祝，但很快見面！</h3>
-                    <p>
-                        很抱歉在第三週年沒辦法馬上跟你一起慶祝，
-                        再過四週我們就要準備見面了，我真的好期待可以看到蔡寶貝，可以一起跟你過生日！
-                        謝謝你在這段時間對我的包容，也那麼愛我，謝謝你對我總是那麼好。
-                        你跟我一起創造了好多好多回憶我永遠都不會忘記，我們還要一起創造更多，甚至去達成我們的夢想！
-                    </p>
-                </div>
-
-                <div class="note" onclick="toggleNote(this)">
-                    <h3>你真的很棒❤️</h3>
-                    <p>
-                        雖然你常常會沒有自信，但我都知道你在我眼中真的是最棒、最好、最漂亮的人！！！
-                        而且你常常覺得自己都沒有做好，但並沒有阿芊芊！你真的很棒你知道嗎❤️
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="add-home-note">
-            📱 <strong>小提醒：</strong><br />
-            你可以把這個網頁
-            <strong>加入主畫面</strong>，以後想我就直接點開～<br />
-            ▸ iPhone(Safari)：點右下的「<span style="font-weight: bold"
-                >分享</span
-            >」→「加入主畫面」<br />
-            ▸ Android(Chrome)：點右上 ⋮ →「加入主畫面」<br />
-            <br />
-            💖 隨時打開都會看到你給我的幸福回憶～我們的專屬秘密基地已經建好了！
-        </div>
-
-        <script src="script.js"></script>
+            function toggleAll(allCheckbox) {
+                const platformCheckboxes =
+                    document.querySelectorAll(".platform");
+                platformCheckboxes.forEach(
+                    (cb) => (cb.checked = allCheckbox.checked)
+                );
+            }
+        </script>
     </body>
 </html>
