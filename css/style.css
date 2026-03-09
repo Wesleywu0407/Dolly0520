@@ -1,137 +1,200 @@
-/* 全站字體與背景 */
+:root {
+    --bg-top: #fff4d6;
+    --bg-mid: #ffe6d8;
+    --bg-bottom: #dff4ff;
+    --card: rgba(255, 255, 255, 0.82);
+    --line: #f2c9a8;
+    --ink: #5a4033;
+    --ink-soft: #7d6253;
+    --birthday: #ff9a76;
+    --cat: #7ec2a9;
+    --accent: #ffb347;
+}
+
+* {
+    box-sizing: border-box;
+}
+
 body {
-    font-family: "Segoe UI", "Noto Sans TC", sans-serif;
-    background: linear-gradient(to bottom right, #ffe8ec, #e3f9ff);
     margin: 0;
-    padding: 0;
+    min-height: 100vh;
+    color: var(--ink);
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    background:
+        radial-gradient(circle at 18% 15%, rgba(255, 255, 255, 0.45) 0 18%, transparent 19%),
+        radial-gradient(circle at 84% 6%, rgba(255, 255, 255, 0.35) 0 16%, transparent 17%),
+        linear-gradient(180deg, var(--bg-top) 0%, var(--bg-mid) 48%, var(--bg-bottom) 100%);
+    -webkit-tap-highlight-color: transparent;
+}
+
+.phone-home {
+    width: min(680px, 94vw);
+    margin: 14px auto 24px;
+    display: grid;
+    gap: 14px;
+}
+
+.home-hero,
+.quick-tool,
+.home-tip {
+    background: var(--card);
+    border: 2px solid var(--line);
+    border-radius: 22px;
+    padding: 14px;
+    box-shadow: 0 12px 24px rgba(89, 62, 48, 0.12);
+}
+
+.home-hero {
     text-align: center;
 }
 
-/* 導覽列 */
-.main-menu {
-    background-color: #222;
-    padding: 1rem;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.main-menu ul {
-    list-style: none;
+.home-date {
     margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
+    font-size: 0.86rem;
+    color: #b26f49;
 }
 
-.main-menu a {
-    color: white;
+h1,
+h2,
+.title {
+    font-family: "Baloo 2", cursive;
+}
+
+h1 {
+    margin: 8px 0 2px;
+    font-size: clamp(1.5rem, 7vw, 2rem);
+}
+
+.home-hero p {
+    margin: 6px 0 0;
+    color: var(--ink-soft);
+}
+
+.app-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.app-card {
     text-decoration: none;
-    font-size: 1.1rem;
-    transition: color 0.3s ease;
+    color: var(--ink);
+    border-radius: 20px;
+    padding: 16px 12px;
+    min-height: 150px;
+    border: 2px solid rgba(255, 255, 255, 0.75);
+    display: grid;
+    align-content: center;
+    justify-items: center;
+    gap: 3px;
+    box-shadow: 0 12px 18px rgba(0, 0, 0, 0.11);
+    transform: translateY(0);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.main-menu a:hover {
-    color: #ffca28;
+.app-card:active {
+    transform: translateY(2px) scale(0.98);
 }
 
-/* 頁首區塊 */
-header {
-    background: #ff80ab;
-    color: white;
-    padding: 2.5rem 1rem 2rem;
-    box-shadow: 0 4px 12px rgba(255, 128, 171, 0.4);
-    border-bottom-left-radius: 40px;
-    border-bottom-right-radius: 40px;
-}
-
-header h1 {
+.app-card .icon {
     font-size: 2rem;
-    margin-bottom: 1rem;
 }
 
-/* 搜尋欄與按鈕 */
+.app-card .title {
+    font-size: 1.18rem;
+    font-weight: 700;
+}
+
+.app-card .desc {
+    font-size: 0.9rem;
+    color: #5c4a40;
+}
+
+.app-card.birthday {
+    background: linear-gradient(160deg, #ffd3bf 0%, var(--birthday) 100%);
+}
+
+.app-card.cat {
+    background: linear-gradient(160deg, #cbf4e5 0%, var(--cat) 100%);
+}
+
+.quick-tool h2 {
+    margin: 0 0 4px;
+    font-size: 1.3rem;
+}
+
+.quick-tool p {
+    margin: 0;
+    color: var(--ink-soft);
+}
+
+.search-row {
+    margin-top: 10px;
+    display: flex;
+    gap: 8px;
+}
+
 input {
-    padding: 0.6rem 1rem;
+    width: 100%;
+    min-height: 44px;
+    border: 2px solid #f0c6a5;
+    border-radius: 12px;
+    padding: 0 12px;
     font-size: 1rem;
-    width: 250px;
-    border: 2px solid #ffb6c1;
-    border-radius: 10px;
-    outline: none;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    color: var(--ink);
+    background: #fffdfb;
 }
 
 button {
-    padding: 0.6rem 1.2rem;
-    font-size: 1rem;
-    margin-left: 0.5rem;
-    cursor: pointer;
+    min-height: 44px;
     border: none;
-    background-color: #ffca28;
-    color: #333;
-    border-radius: 10px;
-    transition: background-color 0.3s, transform 0.2s;
+    border-radius: 12px;
+    padding: 0 16px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-family: "Baloo 2", cursive;
+    background: var(--accent);
+    color: #4f3628;
+    box-shadow: 0 6px 12px rgba(255, 174, 64, 0.28);
 }
 
-button:hover {
-    background-color: #ffc107;
-    transform: scale(1.05);
-}
-
-/* 平台選擇 */
 .checkbox-group {
-    margin-top: 1.2rem;
+    margin-top: 10px;
     display: flex;
-    justify-content: center;
-    gap: 1.2rem;
+    gap: 8px;
     flex-wrap: wrap;
 }
 
 .checkbox-group label {
-    font-size: 1rem;
-    color: white;
-    background-color: #ffb6c1;
-    padding: 0.5rem 0.8rem;
-    border-radius: 20px;
-    transition: transform 0.2s, background-color 0.3s;
+    background: #fff;
+    border: 2px solid #efcfb8;
+    border-radius: 999px;
+    padding: 7px 10px;
+    font-size: 0.92rem;
+    color: #6d5345;
 }
 
-.checkbox-group input[type="checkbox"] {
-    margin-right: 6px;
+.checkbox-group input {
+    margin-right: 4px;
 }
 
-.checkbox-group label:hover {
-    transform: scale(1.05);
-    background-color: #ff91a4;
+.home-tip {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: #6d5345;
+    text-align: center;
 }
 
-/* 搜尋結果卡片 */
-.result-card {
-    background: white;
-    border-radius: 16px;
-    padding: 1rem;
-    margin: 1.5rem auto;
-    width: 90%;
-    max-width: 600px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-}
+@media (min-width: 760px) {
+    .phone-home {
+        margin-top: 24px;
+        gap: 16px;
+    }
 
-.result-card:hover {
-    transform: scale(1.02);
-}
-
-.result-card h2 {
-    margin-top: 0;
-    color: #333;
-}
-
-.result-card a {
-    display: inline-block;
-    margin-top: 0.5rem;
-    text-decoration: none;
-    color: #2196f3;
-    font-weight: bold;
-}
-
-.result-card a:hover {
-    text-decoration: underline;
+    .home-hero,
+    .quick-tool,
+    .home-tip {
+        padding: 18px;
+    }
 }
