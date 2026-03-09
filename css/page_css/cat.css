@@ -1,0 +1,384 @@
+:root {
+    --bg-cream: #fff7ef;
+    --bg-peach: #f7eadc;
+    --card-mint: #f1fbf5;
+    --card-apricot: #fff1e4;
+    --ink: #4a3a31;
+    --ink-soft: #6a574b;
+    --accent: #ff9f6b;
+    --accent-deep: #f27b4e;
+    --line: #eacfb9;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Zen Maru Gothic", sans-serif;
+    background: radial-gradient(circle at 20% 20%, #ffe8d1 0%, transparent 28%),
+        radial-gradient(circle at 82% 0%, #e0f7ec 0%, transparent 25%),
+        linear-gradient(180deg, var(--bg-cream) 0%, var(--bg-peach) 100%);
+    color: var(--ink);
+    -webkit-tap-highlight-color: transparent;
+}
+
+.cross-nav {
+    width: min(980px, 92vw);
+    margin: 18px auto 0;
+    display: flex;
+    justify-content: center;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+}
+
+.cross-link {
+    text-decoration: none;
+    min-height: 44px;
+    border-radius: 999px;
+    padding: 0.5rem 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #f0ccb5;
+    color: #805845;
+    background: rgba(255, 255, 255, 0.88);
+    font-family: "Mochiy Pop One", sans-serif;
+    font-size: 0.86rem;
+}
+
+.cross-link.active {
+    background: linear-gradient(140deg, var(--accent) 0%, var(--accent-deep) 100%);
+    color: #fff;
+    border-color: transparent;
+}
+
+.cat-page {
+    width: min(980px, 92vw);
+    margin: 24px auto 40px;
+    display: grid;
+    gap: 18px;
+}
+
+.hero,
+.cat-panel,
+.warm-note,
+.mini-game {
+    border: 2px solid var(--line);
+    border-radius: 24px;
+    padding: 18px;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(3px);
+    box-shadow: 0 10px 28px rgba(132, 97, 75, 0.12);
+}
+
+.hero {
+    text-align: center;
+}
+
+.eyebrow {
+    margin: 0;
+    color: #b87854;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+h1,
+h2 {
+    margin: 8px 0;
+    font-family: "Mochiy Pop One", sans-serif;
+    color: #553429;
+}
+
+h1 {
+    font-size: clamp(1.45rem, 4vw, 2rem);
+}
+
+h2 {
+    font-size: clamp(1.08rem, 3.2vw, 1.35rem);
+}
+
+.hero-text {
+    margin: 10px auto 14px;
+    max-width: 52ch;
+    line-height: 1.75;
+    color: var(--ink-soft);
+}
+
+.quote-result {
+    min-height: 1.8em;
+    color: #7e5542;
+    margin: 10px 0 2px;
+}
+
+.pill-btn,
+.boop-btn {
+    border: none;
+    border-radius: 999px;
+    min-height: 44px;
+    padding: 0 18px;
+    font-family: "Mochiy Pop One", sans-serif;
+    font-size: 0.88rem;
+    cursor: pointer;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.pill-btn {
+    background: linear-gradient(140deg, var(--accent) 0%, var(--accent-deep) 100%);
+    color: #fff;
+    box-shadow: 0 8px 16px rgba(242, 123, 78, 0.28);
+}
+
+.pill-btn.alt {
+    background: #fff;
+    color: #8e5b41;
+    border: 2px solid #f2c3a8;
+    box-shadow: none;
+}
+
+.boop-btn {
+    background: #ffe3ca;
+    color: #754d39;
+    border: 2px solid #f4be97;
+}
+
+.pill-btn:active,
+.boop-btn:active {
+    transform: scale(0.95);
+}
+
+.cat-panel {
+    display: grid;
+    gap: 12px;
+}
+
+.oli-panel {
+    background: linear-gradient(170deg, #f3f7ff 0%, #f4fff8 100%);
+}
+
+.dami-panel {
+    background: linear-gradient(170deg, #fffaf5 0%, #fff2f5 100%);
+}
+
+.panel-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.cat-desc {
+    margin: 0;
+    color: #6a574b;
+    line-height: 1.72;
+}
+
+.cat-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.cat-gallery img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 16px;
+    border: 2px solid #fff;
+    box-shadow: 0 10px 16px rgba(65, 41, 28, 0.12);
+    transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.cat-gallery img:hover {
+    transform: translateY(-3px) rotate(-1.5deg);
+    box-shadow: 0 14px 20px rgba(65, 41, 28, 0.18);
+}
+
+.warm-note {
+    background: linear-gradient(180deg, #fff6ea 0%, #fffdf7 100%);
+    text-align: center;
+}
+
+.warm-note p {
+    margin: 0;
+    line-height: 1.85;
+    color: #725e51;
+}
+
+.mini-game {
+    background: linear-gradient(180deg, var(--card-mint) 0%, var(--card-apricot) 100%);
+}
+
+.game-hud {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-weight: 700;
+    color: #6f4f3f;
+}
+
+.mode-switch {
+    margin-top: 8px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.mode-btn {
+    border: 2px solid #f0ccb5;
+    border-radius: 999px;
+    min-height: 40px;
+    padding: 0 14px;
+    background: #fff;
+    color: #7c5442;
+    font-family: "Mochiy Pop One", sans-serif;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+.mode-btn.active {
+    background: linear-gradient(140deg, var(--accent) 0%, var(--accent-deep) 100%);
+    border-color: transparent;
+    color: #fff;
+}
+
+.fish-zone {
+    position: relative;
+    margin-top: 10px;
+    width: 100%;
+    height: 260px;
+    border-radius: 20px;
+    border: 2px dashed #8fc3aa;
+    background: linear-gradient(180deg, #dff6ff 0%, #b8e5ff 45%, #9bd7ff 100%);
+    overflow: hidden;
+    touch-action: manipulation;
+    perspective: 780px;
+    transform-style: preserve-3d;
+}
+
+.fish-zone::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        radial-gradient(circle at 15% 22%, rgba(255, 255, 255, 0.38) 0 6px, transparent 7px),
+        radial-gradient(circle at 78% 32%, rgba(255, 255, 255, 0.34) 0 5px, transparent 6px),
+        radial-gradient(circle at 55% 70%, rgba(255, 255, 255, 0.28) 0 7px, transparent 8px);
+    opacity: 0.8;
+}
+
+.fish-target {
+    position: absolute;
+    width: 56px;
+    height: 56px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.84);
+    font-size: 1.45rem;
+    cursor: pointer;
+    box-shadow: 0 9px 20px rgba(66, 112, 124, 0.3);
+    transform-style: preserve-3d;
+    will-change: transform, opacity;
+    transition: box-shadow 0.15s ease;
+    user-select: none;
+}
+
+.fish-target.is-near {
+    box-shadow: 0 12px 26px rgba(46, 94, 109, 0.36);
+}
+
+.fish-target:active {
+    filter: brightness(0.95);
+}
+
+.game-actions {
+    margin-top: 10px;
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+.game-status {
+    text-align: center;
+    min-height: 1.6em;
+    color: #6a574b;
+    margin: 10px 0 2px;
+}
+
+.paw-pop {
+    position: fixed;
+    font-size: 1.3rem;
+    pointer-events: none;
+    animation: pawFloat 0.75s ease-out forwards;
+}
+
+@keyframes pawFloat {
+    from {
+        opacity: 0;
+        transform: translateY(8px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(-36px) scale(1.12);
+    }
+}
+
+@media (max-width: 760px) {
+    .cat-page {
+        width: 94vw;
+        margin-top: 14px;
+        gap: 14px;
+    }
+
+    .cross-nav {
+        width: 94vw;
+        margin-top: 12px;
+    }
+
+    .cross-link {
+        flex: 1;
+        min-width: 130px;
+    }
+
+    .hero,
+    .cat-panel,
+    .warm-note,
+    .mini-game {
+        border-radius: 18px;
+        padding: 14px;
+    }
+
+    .cat-gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+    }
+
+    .cat-gallery img {
+        height: 148px;
+    }
+
+    .game-hud {
+        gap: 14px;
+        font-size: 0.95rem;
+    }
+
+    .mode-switch {
+        margin-top: 6px;
+    }
+
+    .fish-zone {
+        height: 220px;
+    }
+
+    .game-actions {
+        flex-direction: column;
+    }
+
+    .pill-btn,
+    .boop-btn {
+        width: 100%;
+    }
+}

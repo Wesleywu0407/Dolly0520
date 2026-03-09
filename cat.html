@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="theme-color" content="#f9efe3" />
+        <title>歐哩與大咪的喵喵小宇宙</title>
+        <link rel="stylesheet" href="css/page_css/cat.css" />
+        <link rel="icon" href="assets/icon.png" type="image/png" />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Zen+Maru+Gothic:wght@400;700&display=swap"
+        />
+    </head>
+    <body>
+        <nav class="cross-nav" aria-label="頁面切換">
+            <a href="birthday.html" class="cross-link">🎂 生日頁</a>
+            <a href="cat.html" class="cross-link active">🐱 貓咪頁</a>
+        </nav>
+        <main class="cat-page">
+            <header class="hero">
+                <p class="eyebrow">喵嗚小檔案</p>
+                <h1>歐哩 & 大咪 的溫馨樂園</h1>
+                <p class="hero-text">
+                    灰色那隻是 <strong>歐哩</strong>，白色三花是 <strong>大咪</strong>。
+                    每天都被牠們可愛到不行，這頁就是專屬牠們的幸福記錄。
+                </p>
+                <button type="button" id="quote-btn" class="pill-btn">抽一張今日喵語</button>
+                <p id="quote-result" class="quote-result">今天也會是被貓咪療癒的一天。</p>
+            </header>
+
+            <section class="cat-panel oli-panel" aria-labelledby="oli-title">
+                <div class="panel-head">
+                    <h2 id="oli-title">🐈‍⬛ 歐哩（灰色）</h2>
+                    <button type="button" class="boop-btn" data-cat="歐哩">
+                        戳戳歐哩
+                    </button>
+                </div>
+                <p class="cat-desc">
+                    歐哩是冷靜系小帥哥，表情常常很酷，但其實是會偷偷黏人的小寶寶。
+                </p>
+                <div class="cat-gallery">
+                    <img src="貓咪/IMG_3298.jpg" alt="歐哩看鏡頭" loading="lazy" />
+                    <img src="貓咪/IMG_3303.jpg" alt="歐哩趴著休息" loading="lazy" />
+                    <img src="貓咪/IMG_3305.jpg" alt="歐哩近距離特寫" loading="lazy" />
+                    <img src="貓咪/IMG_5273.JPG" alt="歐哩可愛日常" loading="lazy" />
+                </div>
+            </section>
+
+            <section class="cat-panel dami-panel" aria-labelledby="dami-title">
+                <div class="panel-head">
+                    <h2 id="dami-title">🐱 大咪（白色三花）</h2>
+                    <button type="button" class="boop-btn" data-cat="大咪">
+                        戳戳大咪
+                    </button>
+                </div>
+                <p class="cat-desc">
+                    大咪是活潑小公主，眼神超有戲，撒嬌模式一開直接融化整個家。
+                </p>
+                <div class="cat-gallery">
+                    <img src="貓咪/IMG_3297.PNG" alt="大咪呆萌表情" loading="lazy" />
+                    <img src="貓咪/IMG_3306.PNG" alt="大咪可愛臉蛋" loading="lazy" />
+                    <img src="貓咪/IMG_5365.JPG" alt="大咪日常瞬間" loading="lazy" />
+                    <img src="貓咪/IMG_8539.JPG" alt="大咪溫柔看著鏡頭" loading="lazy" />
+                </div>
+            </section>
+
+            <section class="warm-note" aria-labelledby="note-title">
+                <h2 id="note-title">🏠 我們家的幸福配方</h2>
+                <p>
+                    早上被喵喵聲叫醒，晚上被呼嚕聲包圍。歐哩和大咪讓每個普通日子都變得特別，
+                    有牠們在的地方，就是最溫暖的家。
+                </p>
+            </section>
+
+            <section class="mini-game" aria-labelledby="game-title">
+                <h2 id="game-title">🎣 3D 餵食挑戰：抓魚魚</h2>
+                <p>魚會從遠方游近你，快點擊抓魚。可選 Normal / Hard！</p>
+                <div class="mode-switch" role="group" aria-label="難度選擇">
+                    <button type="button" class="mode-btn active" id="fish-mode-normal">Normal</button>
+                    <button type="button" class="mode-btn" id="fish-mode-hard">Hard</button>
+                </div>
+                <div class="game-hud" aria-live="polite">
+                    <span>分數：<strong id="fish-score">0</strong></span>
+                    <span>時間：<strong id="fish-timer">20</strong>s</span>
+                </div>
+                <div id="fish-zone" class="fish-zone"></div>
+                <div class="game-actions">
+                    <button type="button" id="fish-start" class="pill-btn">開始挑戰</button>
+                    <button type="button" id="fish-reset" class="pill-btn alt">重設</button>
+                </div>
+                <p id="fish-status" class="game-status">準備好就進入 3D 抓魚模式吧！</p>
+            </section>
+        </main>
+
+        <script src="js/cat.js"></script>
+    </body>
+</html>

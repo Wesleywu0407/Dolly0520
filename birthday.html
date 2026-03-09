@@ -13,6 +13,10 @@
         />
     </head>
     <body>
+        <nav class="cross-nav" aria-label="頁面切換">
+            <a href="birthday.html" class="cross-link active">🎂 生日頁</a>
+            <a href="cat.html" class="cross-link">🐱 貓咪頁</a>
+        </nav>
         <audio controls autoplay loop>
             <source src="assets/music.mp3" type="audio/mpeg" />
         </audio>
@@ -32,17 +36,33 @@
 
             <div class="game-section">
                 <h2>點擊證明你多漂亮！</h2>
-                <button onclick="showPraise()">點我一下（一直點）</button>
+                <button type="button" onclick="showPraise()">點我一下（一直點）</button>
                 <p id="praise-message"></p>
             </div>
+
+            <section class="mini-game" aria-labelledby="mini-game-title">
+                <h2 id="mini-game-title">🎮 手機小遊戲：30 秒愛心快手</h2>
+                <p class="game-intro">按下開始後，在 30 秒內盡量點掉跳出的愛心！</p>
+                <div class="game-hud" aria-live="polite">
+                    <span>⏱️ <strong id="game-timer">30</strong>s</span>
+                    <span>🏆 分數：<strong id="game-score">0</strong></span>
+                    <span>🔥 連擊：<strong id="game-combo">0</strong></span>
+                </div>
+                <div id="tap-game-area" class="tap-game-area" role="button" tabindex="0" aria-label="點擊愛心遊戲區"></div>
+                <div class="game-actions">
+                    <button type="button" id="game-start-btn">開始遊戲</button>
+                    <button type="button" id="game-reset-btn">重玩</button>
+                </div>
+                <p id="game-status" class="game-status">準備好了就開始吧 ❤️</p>
+            </section>
 
             <h2>我們的澳洲回憶 🌏</h2>
             <p style="margin-top: 1rem">📸 小提示：點照片會有驚喜唷！</p>
             <div class="memory-gallery">
                 <img src="assets/1.JPG" alt="阿芊芊雪梨港邊" />
-                <img src="assets/2.jpg" />
+                <img src="assets/2.jpg" alt="澳洲回憶照 2" />
                 <img src="assets/3.JPG" alt="芊芊望著海岸的背影" />
-                <img src="assets/4.JPG" />
+                <img src="assets/4.JPG" alt="澳洲回憶照 4" />
             </div>
             <div class="memory-section">
                 <h2>👫 我們的 合照牆</h2>
@@ -64,16 +84,16 @@
                 超緊張但又超好笑～有你一起真的好幸福❤️
             </p>
             <div class="memory-gallery korea-gallery">
-                <img src="korea/1.jpg" />
-                <img src="korea/2.jpg" />
-                <img src="korea/3.jpg" />
-                <img src="korea/4.jpg" />
-                <img src="korea/5.jpg" />
-                <img src="korea/6.jpg" />
-                <img src="korea/7.jpg" />
-                <img src="korea/8.jpg" />
-                <img src="korea/9.jpg" />
-                <img src="korea/10.jpg" />
+                <img src="korea/1.jpg" alt="韓國回憶照 1" />
+                <img src="korea/2.jpg" alt="韓國回憶照 2" />
+                <img src="korea/3.jpg" alt="韓國回憶照 3" />
+                <img src="korea/4.jpg" alt="韓國回憶照 4" />
+                <img src="korea/5.jpg" alt="韓國回憶照 5" />
+                <img src="korea/6.jpg" alt="韓國回憶照 6" />
+                <img src="korea/7.jpg" alt="韓國回憶照 7" />
+                <img src="korea/8.jpg" alt="韓國回憶照 8" />
+                <img src="korea/9.jpg" alt="韓國回憶照 9" />
+                <img src="korea/10.jpg" alt="韓國回憶照 10" />
             </div>
             <h2>我們的日常生活 ❤️</h2>
             <div class="daily-gallery">
